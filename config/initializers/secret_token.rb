@@ -9,4 +9,18 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Mol::Application.config.secret_key_base = '4cad96ee2f4777b15ffc6af20f8f9e2d995561b00b45a24b5341f08a83e5664c26db1a2739b264ab2da996afd61e85d9d137e2798040ceb54d23eea7e9e9a3ce'
+require 'securerandom'
+
+def secure_token
+	token_file = Rails.root.join('.secret')
+	if File.exist?(token_file)
+		# use the existing
+		File.read(token_file).chomp
+	else
+		# generate new token and store to token_file
+		token = SecureRandom.hex(64)
+		File.write(token_file, token)
+		token
+	end
+end
+Mol::Application.config.secret_key_base = secure_token
