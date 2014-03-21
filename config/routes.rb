@@ -1,4 +1,6 @@
 Mol::Application.routes.draw do
+  match '/help', :to => 'pages#help', :via => 'get'
+  root :to => "pages#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
