@@ -3,26 +3,26 @@ default: &default
   enconding: utf8
   pool: 5
   timeout: 5000
-  username: jmdc
+  username: root
   password: password
   host: localhost.dev
 
 development:
   <<: *default
-  username: jmdc
+  username: root
   password: password
   host: localhost.dev
   database: mol_development
 
 production:
   <<: *default
-  username: jmdc
+  username: root
   password: password
   host: localhost.dev
   database: mol_production
 
 test:
-  <<:  *default
+  <<: *default
   username: root
   password: password
   host: localhost.dev
