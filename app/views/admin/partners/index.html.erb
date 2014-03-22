@@ -1,7 +1,7 @@
 <h4>Partners List</h4>
 <%= link_to "Create Partner Company", new_admin_partner_path %>
 
-<table>
+<table class="table">
 	<thead>
 		<tr>
 			<th>Name</th>
@@ -14,6 +14,10 @@
 		<tr>
 			<td><%= partner.name %></td>
 			<td><%= partner.details %></td>
+			<td>
+				<%= link_to "View", [:admin, partner] %>
+				<%= link_to "Update", '#' %>
+			</td>
 		</tr>
 		<% end %>
 	</tbody>

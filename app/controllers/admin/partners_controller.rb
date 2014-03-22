@@ -19,6 +19,10 @@ class Admin::PartnersController < Admin::BaseController
 		end
 	end
 
+	def show
+		@partner = Partner.find(params[:id])
+	end
+
 	private
 		def partner_params
 			params.require(:partner).permit(:name, :details)
