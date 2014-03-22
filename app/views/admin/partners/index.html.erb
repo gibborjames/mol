@@ -1,2 +1,20 @@
 <h4>Partners List</h4>
 <%= link_to "Create Partner Company", new_admin_partner_path %>
+
+<table>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Details</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @partners.each do |partner| %>
+		<tr>
+			<td><%= partner.name %></td>
+			<td><%= partner.details %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
