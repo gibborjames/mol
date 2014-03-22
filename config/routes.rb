@@ -7,6 +7,7 @@ Mol::Application.routes.draw do
   end
 
   devise_for :users
+  resources :partners
   match '/help', :to => 'pages#help', :via => 'get'
   root :to => "pages#index"
   # The priority is based upon order of creation: first created -> highest priority.
