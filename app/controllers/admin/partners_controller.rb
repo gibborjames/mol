@@ -23,6 +23,21 @@ class Admin::PartnersController < Admin::BaseController
 		@partner = Partner.find(params[:id])
 	end
 
+	def edit
+		@partner = Partner.find(params[:id])
+	end
+
+	def update
+		@partner = Partner.find(params[:id])
+		if @partner.update(partner_params)
+			flash[:notice] = "Update partner."
+			redirect_to admin_partners_path		
+		else
+			flash[:alert] = "Error on creating partners."
+			render :action => 'edit'
+		end
+	end
+
 	private
 		def partner_params
 			params.require(:partner).permit(:name, :details)

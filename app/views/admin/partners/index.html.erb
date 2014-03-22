@@ -16,7 +16,7 @@
 			<td><%= partner.details %></td>
 			<td>
 				<%= link_to "View", [:admin, partner] %>
-				<%= link_to "Update", '#' %>
+				<%= link_to "Update", [:edit, :admin, partner] %>
 			</td>
 		</tr>
 		<% end %>
