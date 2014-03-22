@@ -13,7 +13,7 @@
 		<% @users.each do |user| %>
 		<tr>
 			<td><%= user.email %></td>
-			<td><%= distance_of_time_in_words_to_now(user.last_sign_in_at) %></td>
+			<td><%= user %></td>
 			<td>
 				<%= link_to "View", [:admin, user] %>
 				<%= link_to "Update", [:edit, :admin, user] %>
