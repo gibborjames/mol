@@ -2,6 +2,7 @@ Mol::Application.routes.draw do
 
   namespace :admin do
     root :to => "base#index"
+    resources :partners
     resources :users
   end
 
