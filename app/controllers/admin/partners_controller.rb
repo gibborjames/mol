@@ -38,6 +38,12 @@ class Admin::PartnersController < Admin::BaseController
 		end
 	end
 
+	def destroy
+		@partner = Partner.find(params[:id]).destroy
+		flash[:notice] = "Deleted partner."
+		redirect_to admin_partners_path
+	end
+
 	private
 		def partner_params
 			params.require(:partner).permit(:name, :details)
