@@ -5,6 +5,6 @@ class Admin::PartnersController < Admin::BaseController
 	end
 
 	def new
-		
+		@partner = Partner.new
 	end
 end

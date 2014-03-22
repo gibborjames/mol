@@ -1,0 +1,11 @@
+<%= form_for [:admin, @partner] do |f| %>
+	<p>
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+	</p>
+	<p>
+		<%= f.label :details %>
+		<%= f.text_area :details %>
+	</p>
+	<%= f.submit %>
+<% end %>
