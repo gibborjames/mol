@@ -1,6 +1,7 @@
-class CreateChasses < ActiveRecord::Migration
+class CreateItems < ActiveRecord::Migration
   def change
-    create_table :chasses do |t|
+    create_table :items do |t|
+    	t.integer :partner_id
     	t.string :chassis_no
     	t.string :size
     	t.string :container_no

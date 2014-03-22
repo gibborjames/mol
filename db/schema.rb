@@ -11,9 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140322044408) do
+ActiveRecord::Schema.define(version: 20140322050343) do
 
   create_table "chasses", force: true do |t|
+    t.integer  "partner_id"
+    t.string   "chassis_no"
+    t.string   "size"
+    t.string   "container_no"
+    t.string   "booking_no"
+    t.string   "customer"
+    t.string   "pull_out_date"
+    t.string   "pull_out_time_out"
+    t.string   "pull_out_tracker"
+    t.string   "pull_out_plate_no"
+    t.string   "return_eir_no"
+    t.string   "return_date"
+    t.string   "return_time_in"
+    t.string   "return_tracker"
+    t.string   "return_plate_no"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "items", force: true do |t|
+    t.integer  "partner_id"
     t.string   "chassis_no"
     t.string   "size"
     t.string   "container_no"
