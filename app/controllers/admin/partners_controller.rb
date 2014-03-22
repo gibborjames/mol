@@ -33,7 +33,7 @@ class Admin::PartnersController < Admin::BaseController
 			flash[:notice] = "Update partner."
 			redirect_to admin_partners_path		
 		else
-			flash[:alert] = "Error on creating partners."
+			flash[:alert] = "Error on updating partners."
 			render :action => 'edit'
 		end
 	end

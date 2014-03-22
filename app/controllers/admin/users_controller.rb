@@ -23,6 +23,21 @@ class Admin::UsersController < Admin::BaseController
   	@user = User.find(params[:id])
   end
 
+  def edit
+  	@user = User.find(params[:id])
+  end
+
+  def update
+  	@user = User.find(params[:id])
+  	if @user.update(user_params)
+  		flash[:notice] = "Update user."
+			redirect_to admin_users_path
+  	else
+  		flash[:alert] = "Error on Updating user."
+			render :action => 'edit'
+  	end
+  end
+
   private
   	def user_params
   		params.require(:user).permit(:email, :password)
