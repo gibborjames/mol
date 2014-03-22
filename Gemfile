@@ -36,6 +36,8 @@ end
 
 group :development, :test do
   gem 'rspec-rails', '2.13.1'
+  gem 'pry'
+  gem 'debugger'
 end
 
 group :test do
