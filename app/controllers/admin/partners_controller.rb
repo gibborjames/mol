@@ -4,4 +4,7 @@ class Admin::PartnersController < Admin::BaseController
 		
 	end
 
+	def new
+		
+	end
 end
