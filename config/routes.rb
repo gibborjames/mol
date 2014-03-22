@@ -1,4 +1,10 @@
 Mol::Application.routes.draw do
+
+  namespace :admin do
+    root :to => "base#index"
+    resources :users
+  end
+
   devise_for :users
   match '/help', :to => 'pages#help', :via => 'get'
   root :to => "pages#index"
