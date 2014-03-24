@@ -8,7 +8,8 @@ bundle install
 
 # copy database yml
 configure your own username and password to database.yml
-cp config/database.yml.sample config/database.yml
+
+"cp config/database.yml.sample config/database.yml"
 
 # Rake task
 rake db:create db:migrate db:seed
