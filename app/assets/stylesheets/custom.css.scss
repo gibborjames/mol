@@ -1,9 +1,8 @@
 @import "bootstrap";
 
 body {
-  padding-top: 60px;
+  padding-top: 50px;
 }
-
 
 /* header */
 
@@ -21,5 +20,5 @@ body {
 
 #logo:hover {
   color: #fff;
-  text-decoration: none;
+  text-decoration: underline;
 }
