@@ -1,2 +1,11 @@
 <h4>COMPANY <%= @partner.name %></h4>
- <%= render "form" %>
+<div class="btn">
+  <%= link_to "BACK", @partner %>
+</div>
+<div class="btn">
+  <%= link_to "Update", [:edit, @partner, @item] %>
+</div>
+<h4>CHASSIS NO: <%= @item.chassis_no %></h4>
+<h4>SIZE: <%= @item.size %></h4>
+<h4>CONTAINER NO: <%= @item.container_no %></h4>
+<!--  <%= render "form" %> -->
