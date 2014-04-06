@@ -5,6 +5,7 @@ gem 'rails', '4.0.0'
 gem 'bootstrap-sass', '2.3.2.0'
 gem 'sprockets', '2.11.0'
 gem 'devise'
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 # Use sqlite3 as the database for Active Record
 group :production do
 	gem 'mysql2'
