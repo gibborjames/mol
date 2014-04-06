@@ -9,6 +9,6 @@ class PagesController < ApplicationController
 	end
 
 	def help
-		
+		@partners = Partner.all
 	end
 end
