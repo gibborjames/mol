@@ -13,8 +13,9 @@
 		<tr>
 			<th>Chassis No</th>
 			<th>Size</th>
-			<th>Booking No</th>
+			<th>Container No</th>
 			<th>Customer</th>
+			<th>Booking No</th>
 			<th>Action</th>
 		</tr>
 	</thead>
@@ -25,6 +26,7 @@
 			<td><%= item.size %></td>
 			<td><%= item.container_no %></td>
 			<td><%= item.customer %></td>
+			<td><%= item.booking_no %></td>
 			<td>
 				<%= link_to "View", [@partner, item] %>
 			</td>
