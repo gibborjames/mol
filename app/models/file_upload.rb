@@ -17,11 +17,13 @@ class FileUpload < ActiveRecord::Base
       file = "public/system/file_uploads/files/000/000/00#{self.id}/original/#{self.file_file_name}"
       partner = Partner.find(self.partner_id)
       CSV.foreach(file, headers: true) do |row|
-        partner.items.create!(
+        # binding.pry
+        partner.items.find_or_create_by_booking_no!(
           chassis_no: row[0],
           size: row[1],
           container_no: row[2],
-          customer: row[3]
+          customer: row[3],
+          booking_no: row[4]
           )
       end
     end
