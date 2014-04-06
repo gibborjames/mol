@@ -16,6 +16,12 @@ class ItemsController < ApplicationController
     end
   end
 
+  def edit
+    @partners = Partner.all
+    @partner = Partner.find(params[:partner_id])
+    @item = Item.find(params[:id])
+  end
+
   private
     def item_params
       params.require(:item).permit(:chassis_no, :size, :container_no, :customer)
