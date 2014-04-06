@@ -15,15 +15,19 @@
 			<th>Size</th>
 			<th>Booking No</th>
 			<th>Customer</th>
+			<th>Action</th>
 		</tr>
 	</thead>
 	<tbody>
-		<% @partner.items.each do |item| %>
+		<% @items.each do |item| %>
 		<tr>
 			<td><%= item.chassis_no %></td>
 			<td><%= item.size %></td>
 			<td><%= item.container_no %></td>
 			<td><%= item.customer %></td>
+			<td>
+				<%= link_to "Update", [@partner, item] %>
+			</td>
 		</tr>
 		<% end %>
 	</tbody>
