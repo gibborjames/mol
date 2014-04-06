@@ -7,7 +7,9 @@ Mol::Application.routes.draw do
   end
 
   devise_for :users
-  resources :partners
+  resources :partners do
+    resources :file_uploads
+  end
   match '/help', :to => 'pages#help', :via => 'get'
   root :to => "pages#index"
   # The priority is based upon order of creation: first created -> highest priority.
@@ -50,7 +52,7 @@ Mol::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
