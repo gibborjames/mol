@@ -1,6 +1,12 @@
 <h4><%= @partner.name %> Details</h4>
 
-<table class="table">
+<%= form_for [@partner, @file_upload], :html => { :multipart => true } do |f| %>
+	<p>
+		<%= f.file_field :file %>
+	</p>
+	<%= f.submit %>
+<% end %>
+<!-- <table class="table">
 	<thead>
 		<tr>
 			<th>Chassis No</th>
@@ -25,4 +31,4 @@
 			<td></td>
 		</tr>
 	</tbody>
-</table>
+</table> -->
