@@ -2,15 +2,14 @@ class FileUploadsController < ApplicationController
 
   def create
     @partner = Partner.find(params[:partner_id])
-    binding.pry
-    @file_upload = @partner.file_uploads.build(file_params)
-    # @file_upload = @partner.file_uploads.build(params[:file_upload])
-    if @file_upload.save!
-      binding.pry
+    if params['file_upload'].nil?
+      redirect_to @partner, notice: "NO FILE FOUND."
     else
-      binding.pry
+      @file_upload = @partner.file_uploads.build(file_params)
+      if @file_upload.save!
+        redirect_to @partner, notice: "SUCCESSFULLY UPLOAD."
+      end
     end
-    redirect_to @partner
   end
 
   private
