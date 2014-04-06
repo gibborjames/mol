@@ -1,0 +1,14 @@
+<h4>Form</h4>
+<%= form_for [@partner, @item] do |form| %>
+  <p>
+    <%= form.label :chassis_no %>
+    <%= form.text_field :chassis_no %>
+    <%= form.label :size %>
+    <%= form.text_field :size %>
+    <%= form.label :container_no %>
+    <%= form.text_field :container_no %>
+    <%= form.label :customer %>
+    <%= form.text_field :customer %>
+  </p>
+  <%= form.submit "Update" %>
+<% end %>
