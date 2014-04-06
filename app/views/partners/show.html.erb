@@ -4,31 +4,27 @@
 	<p>
 		<%= f.file_field :file %>
 	</p>
-	<%= f.submit %>
+	<div class="fileUpload">
+		<%= f.submit "Import to Database" %>
+	</div>
 <% end %>
-<!-- <table class="table">
+<table class="table">
 	<thead>
 		<tr>
 			<th>Chassis No</th>
 			<th>Size</th>
 			<th>Booking No</th>
-			<th>BL No</th>
 			<th>Customer</th>
-			<th>Date & Time Out</th>
-			<th>Date & Time In</th>
-			<th>Action</th>
 		</tr>
 	</thead>
 	<tbody>
+		<% @partner.items.each do |item| %>
 		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td><%= item.chassis_no %></td>
+			<td><%= item.size %></td>
+			<td><%= item.container_no %></td>
+			<td><%= item.customer %></td>
 		</tr>
+		<% end %>
 	</tbody>
-</table> -->
+</table>
