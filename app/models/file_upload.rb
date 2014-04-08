@@ -19,11 +19,21 @@ class FileUpload < ActiveRecord::Base
       CSV.foreach(file, headers: true) do |row|
         # binding.pry
         partner.items.find_or_create_by_booking_no!(
-          chassis_no: row[0],
-          size: row[1],
-          container_no: row[2],
-          customer: row[3],
-          booking_no: row[4]
+          leasing_company: row[0],
+          chassis_no: row[1],
+          size: row[2],
+          container_no: row[3],
+          booking_no: row[4],
+          customer: row[5],
+          date_out: row[6],
+          time_out: row[7],
+          trucker: row[8],
+          plate_no: row[9],
+          eir_no: row[10],
+          date_in: row[11],
+          time_in: row[12],
+          trucker_return: row[13],
+          plate_no: row[14]
           )
       end
     end
