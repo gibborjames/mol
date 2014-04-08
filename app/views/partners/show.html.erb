@@ -25,7 +25,7 @@
 			<th>Date In</th>
 			<th>Time In</th>
 			<th>Trucker Return</th>
-			<th>Plate No</th>
+			<th>Plate No Return</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -37,15 +37,15 @@
 			<td><%= item.container_no %></td>
 			<td><%= item.booking_no %></td>
 			<td><%= item.customer %></td>
-			<td><%= item.date_out %></td>
-			<td><%= item.time_out %></td>
-			<td><%= item.trucker %></td>
-			<td><%= item.plate_no %></td>
+			<td><%= item.pull_out_date %></td>
+			<td><%= item.pull_out_time %></td>
+			<td><%= item.pull_out_trucker %></td>
+			<td><%= item.pull_out_plate_no %></td>
 			<td><%= item.eir_no %></td>
-			<td><%= item.date_in %></td>
-			<td><%= item.time_in %></td>
-			<td><%= item.trucker_return %></td>
-			<td><%= item.plate_no %></td>
+			<td><%= item.return_date %></td>
+			<td><%= item.return_time %></td>
+			<td><%= item.return_trucker %></td>
+			<td><%= item.retured_plate_no %></td>
 		</tr>
 		<% end %>
 	</tbody>
