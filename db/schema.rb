@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20140406033144) do
 
   create_table "items", force: true do |t|
     t.integer  "partner_id"
+    t.string   "leasing_company"
     t.string   "chassis_no"
     t.string   "size"
     t.string   "container_no"
