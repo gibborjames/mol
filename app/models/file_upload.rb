@@ -10,11 +10,15 @@ class FileUpload < ActiveRecord::Base
 
   private
     def todo
-      self.save
       if self.partner.name == "SPRINT"
+        self.save
         return import_sprint
       elsif self.partner.name == "LMC"
+        self.save
         return import_lmc
+      else
+        self.save
+        return import_cmis
       end
     end
 
@@ -40,7 +44,31 @@ class FileUpload < ActiveRecord::Base
     end
 
     def import_cmis
-      binding.pry
+      file = "public/system/file_uploads/files/000/000/00#{self.id}/original/#{self.file_file_name}"
+      partner = Partner.find(self.partner_id)
+      CSV.foreach(file, headers: true) do |row|
+        partner.items.find_or_create_by!(
+          cmis_no: row[0],
+          chassis_no: row[1],
+          size: row[2],
+          pull_out_date: row[3],
+          pull_out_time_out: row[4],
+          pull_out_tracker: row[5],
+          pull_out_plate_no: row[6],
+          booking_no: row[7],
+          customer: row[8],
+          location_out: row[9],
+          return_date: row[10],
+          return_time_in: row[11],
+          return_tracker: row[12],
+          return_plate_no: row[13],
+          return_container_no: row[14],
+          location_in: row[15],
+          status: row[16],
+          days: row[17],
+          remarks: row[18]
+        )
+      end
     end
 
     def import_sprint
