@@ -31,9 +31,9 @@ class FileUpload < ActiveRecord::Base
           pull_out_plate_no: row[9],
           return_eir_no: row[10],
           return_date: row[11],
-          return_time: row[12],
-          return_trucker: row[13],
-          retured_plate_no: row[14]
+          return_time_in: row[12],
+          return_tracker: row[13],
+          return_plate_no: row[14]
           )
       end
     end
