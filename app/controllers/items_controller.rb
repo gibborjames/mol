@@ -24,6 +24,6 @@ class ItemsController < ApplicationController
 
   private
     def item_params
-      params.require(:item).permit(:chassis_no, :size, :container_no, :customer)
+      params.require(:item).permit(:leasing_company, :chassis_no, :size, :container_no, :booking_no, :customer, :pull_out_date, :pull_out_time_out, :pull_out_tracker, :pull_out_plate_no, :return_eir_no, :return_date, :return_time_in, :return_tracker, :return_plate_no)
     end
 end
