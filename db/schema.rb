@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140410145749) do
+ActiveRecord::Schema.define(version: 20140410152512) do
 
   create_table "file_uploads", force: true do |t|
     t.integer  "partner_id"
@@ -61,6 +61,12 @@ ActiveRecord::Schema.define(version: 20140410145749) do
     t.string   "return_shipper"
     t.date     "return_date_out"
     t.string   "return_booking_no"
+    t.string   "cmis_no"
+    t.string   "location_out"
+    t.string   "location_in"
+    t.string   "status"
+    t.string   "days"
+    t.string   "remarks"
   end
 
   create_table "partners", force: true do |t|
