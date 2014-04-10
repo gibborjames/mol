@@ -22,10 +22,20 @@ class FileUpload < ActiveRecord::Base
       file = "public/system/file_uploads/files/000/000/00#{self.id}/original/#{self.file_file_name}"
       partner = Partner.find(self.partner_id)
       CSV.foreach(file, headers: true) do |row|
-        partner.items.find_or_create_by!(
-          leasing_company: row[3],
-          chassis_no: row[4],
-        )
+        if row["LEASING COMPANY"].present?
+          partner.items.find_or_create_by!(
+            leasing_company: row[3],
+            chassis_no: row[4],
+            size: row[5],
+            container_no: row[6],
+            booking_no: row[7],
+            customer: row[10],
+            pull_out_date: row[15],
+            pull_out_time_out: row[16],
+            pull_out_tracker: row[17],
+            pull_out_plate_no: row[18],
+          )
+        end
       end
     end
 
