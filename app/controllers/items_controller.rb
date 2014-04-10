@@ -1,5 +1,8 @@
 class ItemsController < ApplicationController
 
+  def index
+  end
+
   def show
     @partners = Partner.all
     @partner = Partner.find(params[:partner_id])
