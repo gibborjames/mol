@@ -10,3 +10,4 @@ User.create!(:email => 'admin@example.com', :password => 'password', :password_c
 User.create!(:email => 'user@example.com', :password => 'password', :password_confirmation => 'password')
 Partner.create!(:name => "SPRINT", :details => "SPRINT")
 Partner.create!(:name => "LMC", :details => "LMC")
+Partner.create!(:name => "CMIS", :details => "CMIS")
