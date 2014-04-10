@@ -5,15 +5,35 @@ class FileUpload < ActiveRecord::Base
   has_attached_file :file
   validates_attachment :file, content_type: { content_type: "text/csv" }
 
+  belongs_to :partner
   after_create :todo
 
   private
     def todo
-      self.save!
-      return import
+      self.save
+      if self.partner.name == "SPRINT"
+        return import_sprint
+      elsif self.partner.name == "LMC"
+        return import_lmc
+      end
     end
 
-    def import
+    def import_lmc
+      file = "public/system/file_uploads/files/000/000/00#{self.id}/original/#{self.file_file_name}"
+      partner = Partner.find(self.partner_id)
+      CSV.foreach(file, headers: true) do |row|
+        partner.items.find_or_create_by!(
+          leasing_company: row[3],
+          chassis_no: row[4],
+        )
+      end
+    end
+
+    def import_cmis
+      binding.pry
+    end
+
+    def import_sprint
       file = "public/system/file_uploads/files/000/000/00#{self.id}/original/#{self.file_file_name}"
       partner = Partner.find(self.partner_id)
       CSV.foreach(file, headers: true) do |row|
