@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140406033144) do
+ActiveRecord::Schema.define(version: 20140410034333) do
 
   create_table "file_uploads", force: true do |t|
     t.integer  "partner_id"
@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 20140406033144) do
 
   create_table "items", force: true do |t|
     t.integer  "partner_id"
-    t.string   "leasing_company"
     t.string   "chassis_no"
     t.string   "size"
     t.string   "container_no"
@@ -42,6 +41,7 @@ ActiveRecord::Schema.define(version: 20140406033144) do
     t.string   "return_plate_no"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "leasing_company"
   end
 
   create_table "partners", force: true do |t|
