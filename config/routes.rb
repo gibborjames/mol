@@ -11,6 +11,8 @@ Mol::Application.routes.draw do
     resources :items
     resources :file_uploads
   end
+  
+  resources :items
   match '/help', :to => 'pages#help', :via => 'get'
   root :to => "pages#index"
   # The priority is based upon order of creation: first created -> highest priority.
