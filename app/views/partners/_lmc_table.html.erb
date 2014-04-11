@@ -1,0 +1,81 @@
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Year</th>
+			<th>Month</th>
+			<th>Srvctype</th>
+			<th>Leasing Company</th>
+			<th>Chassis no</th>
+			<th>size</th>
+			<th>Container no</th>
+			<th>booking no</th>
+			<th>Bound</th>
+			<th>Trade</th>
+			<th>Customer</th>
+			<th>Vessel/Destination</th>
+			<th>Authorized no</th>
+			<th>Free Time</th>
+			<th>Date</th>
+			<th>Time Out</th>
+			<th>Pull Out Trucker</th>
+			<th>Pull Out Plate no</th>
+			<th>Pull out container</th>
+			<th>Pull Out container Date</th>
+			<th>Return Trucker container delivery</th>
+			<th>Return Plate no</th>
+			<th>Return Date</th>
+			<th>EIR no</th>
+			<th>Receive by</th>
+			<th>Date</th>
+			<th>Trucker Chassis Return</th>
+			<th>Plate no</th>
+			<th>Return Chassis No</th>
+			<th>Return Container No</th>
+			<th>Return Time In</th>
+			<th>Shipper</th>
+			<th>Date Out</th>
+			<th>Booking no.</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @items.each do |item| %>
+		<tr>
+			<td><%= item.year %></td>
+			<td><%= item.month %></td>
+			<td><%= item.service_type %></td>
+			<td><%= item.leasing_company %></td>
+			<td><%= item.chassis_no %></td>
+			<td><%= item.size %></td>
+			<td><%= item.container_no %></td>
+			<td><%= item.booking_no %></td>
+			<td><%= item.bound %></td>
+			<td><%= item.trade %></td>
+			<td><%= item.customer %></td>
+			<td><%= item.vessel_destination %></td>
+			<td><%= item.authorized_no %></td>
+			<td><%= item.free_time %></td>
+			<td><%= item.pull_out_date %></td>
+			<td><%= item.pull_out_time_out %></td>
+			<td><%= item.pull_out_tracker %></td>
+			<td><%= item.pull_out_plate_no %></td>
+			<td><%= item.trucker_container_pick_up %></td>
+			<td><%= item.trucker_container_pick_up_date %></td>
+			<td><%= item.container_return_delivery %></td>
+			<td><%= item.container_return_plate_no %></td>
+			<td><%= item.container_return_date %></td>
+			<td><%= item.return_eir_no %></td>
+			<td><%= item.return_recieved_by %></td>
+			<td><%= item.pull_out_date %></td>
+			<td><%= item.return_tracker %></td>
+			<td><%= item.return_plate_no %></td>
+			<td><%= item.return_chassis_no %></td>
+			<td><%= item.return_container_no %></td>
+			<td><%= item.return_time_in %></td>
+			<td><%= item.return_shipper %></td>
+			<td><%= item.return_date_out %></td>
+			<td><%= item.return_booking_no %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
