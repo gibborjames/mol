@@ -1,0 +1,42 @@
+<table class="table">
+	<thead>
+		<tr>
+			<th>Leasing Company</th>
+			<th>Chassis No</th>
+			<th>Size</th>
+			<th>Container No</th>
+			<th>Booking No</th>
+			<th>Customer</th>
+			<th>Date Out</th>
+			<th>Time Out</th>
+			<th>Trucker</th>
+			<th>Plate No</th>
+			<th>EIR No</th>
+			<th>Date In</th>
+			<th>Time In</th>
+			<th>Trucker Return</th>
+			<th>Plate No Return</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @items.each do |item| %>
+		<tr>
+			<td><%= item.leasing_company %></td>
+			<td><%= item.chassis_no %></td>
+			<td><%= item.size %></td>
+			<td><%= item.container_no %></td>
+			<td><%= item.booking_no %></td>
+			<td><%= item.customer %></td>
+			<td><%= item.pull_out_date %></td>
+			<td><%= item.pull_out_time_out %></td>
+			<td><%= item.pull_out_tracker %></td>
+			<td><%= item.pull_out_plate_no %></td>
+			<td><%= item.return_eir_no %></td>
+			<td><%= item.return_date %></td>
+			<td><%= item.return_time_in %></td>
+			<td><%= item.return_tracker %></td>
+			<td><%= item.return_plate_no %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
