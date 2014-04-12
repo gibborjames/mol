@@ -1,0 +1,20 @@
+<h4>All Chassises</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>#id</th>
+      <th>#chassises</th>
+      <th>#booking</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @items.each do |item| %>
+    <tr>
+      <td><%= item.id %></td>
+      <td><%= item.chassis_no %></td>
+      <td><%= item.booking_no %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
