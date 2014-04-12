@@ -5,6 +5,7 @@ class FileUpload < ActiveRecord::Base
   has_attached_file :file
   validates_attachment :file, content_type: { content_type: "text/csv" }
 
+  validates :file_file_name, uniqueness: true
   belongs_to :partner
   after_create :todo
 
