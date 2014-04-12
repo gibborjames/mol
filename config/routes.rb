@@ -4,6 +4,7 @@ Mol::Application.routes.draw do
     root :to => "base#index"
     resources :partners
     resources :users
+    resources :uploads
   end
 
   devise_for :users

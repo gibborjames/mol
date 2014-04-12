@@ -1,0 +1,6 @@
+<h4>File Uploads</h4>
+<ul>
+  <% FileUpload.all.each do |upload| %>
+  <li>#<%= upload.id %> == <%= upload.file_file_name %></li>
+  <% end %>
+</ul>
